@@ -40,10 +40,10 @@ var result3 =
 console.log(result3);
 
 // Part 4 | += Operator
-var result4 = "The greatest glory in";
-result4 += " living lies not in";
-result4 += " never falling, but in";
-result4 += " rising every time";
-result4 += " we fall.";
-result4 += "  - Nelson Mandela";
+var result4 = part1;
+result4 += " " + part2;
+result4 += " " + part3;
+result4 += " " + part4;
+result4 += " " + part5;
+result4 += " " + author;
 console.log(result4);
