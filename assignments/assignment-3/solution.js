@@ -18,14 +18,12 @@ console.log("num1 / num2 =", division);
 var fahrenheit1 = 350;
 var celsius1 = (fahrenheit1 - 32) * (5 / 9);
 
-console.log("F =", fahrenheit1);
-console.log("C =", celsius1);
+console.log("If F =", fahrenheit1, "C =", celsius1);
 
 var celsius2 = 180;
 var fahrenheit2 = celsius2 * (9 / 5) + 32;
 
-console.log("C =", celsius2);
-console.log("F =", fahrenheit2);
+console.log("If C =", celsius2, "F =", fahrenheit2);
 
 // Part 3: Interest Calculator
 
@@ -42,12 +40,13 @@ console.log("Interest =", interest);
 
 var a = 35;
 var b = 15;
+console.log("Before swapping: a =", a, ", b =", b);
 
 a = a + b;
 b = a - b;
+a = a - b;
 
-console.log("a =", a);
-console.log("b =", b);
+console.log("After swapping: a =", a, ", b =", b);
 
 // Part 5: Implementing Mathematical Formulas
 
