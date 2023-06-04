@@ -33,6 +33,9 @@ var principal = 10000;
 var rate = 3.5;
 var time = 5;
 var interest = (principal * rate * time) / 100;
+console.log("Principal =", principal);
+console.log("Rate =", rate);
+console.log("Time =", time);
 console.log("Interest =", interest);
 
 // Part 4: Swapping Values
@@ -45,3 +48,23 @@ b = a - b;
 
 console.log("a =", a);
 console.log("b =", b);
+
+// Part 5: Implementing Mathematical Formulas
+
+// Cicle Area Formula
+var radius = 4;
+var pi = Math.PI;
+var area = pi * radius ** 2;
+
+console.log("r =", radius);
+console.log("π =", pi);
+console.log("area =", area);
+
+// Perimeter Formula
+var length = 16;
+var width = 24;
+var perimeter = 2 * (length + width);
+
+console.log("length =", length);
+console.log("width =", width);
+console.log("P =", perimeter);
