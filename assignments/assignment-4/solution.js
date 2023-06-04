@@ -5,11 +5,11 @@ var part4 = "rising every time";
 var part5 = "we fall.";
 var author = " - Nelson Mandela";
 
-// Part 1
+// Part 1 | Template Literals
 var result1 = `${part1} ${part2} ${part3} ${part4} ${part5} ${author}`;
 console.log(result1);
 
-// Part 2
+// Part 2 | concat() Method
 var result2 = part1.concat(
     " ",
     part2,
@@ -23,3 +23,18 @@ var result2 = part1.concat(
     author
 );
 console.log(result2);
+
+// Part 3 | + Operator
+var result3 =
+    part1 +
+    " " +
+    part2 +
+    " " +
+    part3 +
+    " " +
+    part4 +
+    " " +
+    part5 +
+    " " +
+    author;
+console.log(result3);
