@@ -38,3 +38,12 @@ var result3 =
     " " +
     author;
 console.log(result3);
+
+// Part 4 | += Operator
+var result4 = "The greatest glory in";
+result4 += " living lies not in";
+result4 += " never falling, but in";
+result4 += " rising every time";
+result4 += " we fall.";
+result4 += "  - Nelson Mandela";
+console.log(result4);
