@@ -14,7 +14,7 @@ console.log(Math.round(0.5534)); // 1
 console.log(Math.ceil(0.0167)); // 1
 console.log(Math.floor(0.9999)); // o
 console.log(Math.round(-0.5543)); // -1
-console.log(Math.ceil(-0.1234)); // -1
+console.log(Math.ceil(-0.1234)); // 0
 console.log(Math.floor(-0.9876)); // -1
 console.log(Math.round(9876.5)); // 9877
 console.log(Math.ceil(8765.1)); // 8766
