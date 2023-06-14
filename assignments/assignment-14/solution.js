@@ -41,21 +41,9 @@ function squaresOfNumbers() {
 // 3, 5, 6, 9, 10, ...,95, 96, 99
 function divisibleByThreeOrFive() {
     for (i = 1; i <= 99; i++) {
-        if (i % 3 === 0 || i % 5 === 0) {
+        if ((i % 3 === 0 && i % 5 !== 0) || (i % 3 !== 0 && i % 5 === 0)) {
             console.log(i);
         }
     }
 }
 //divisibleByThreeOrFive();
-
-function printDivisibleBy3Or5() {
-    for (var num = 1; num <= 99; num++) {
-        if (
-            (num % 3 === 0 && num % 5 !== 0) ||
-            (num % 3 !== 0 && num % 5 === 0)
-        ) {
-            console.log(num);
-        }
-    }
-}
-//printDivisibleBy3Or5();
