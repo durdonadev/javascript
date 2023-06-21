@@ -4,11 +4,11 @@ Example Output: ["apple", "banana", "grape"]
 Example Input: "red,green,blue,yellow"
 Example Output: ["red", "green", "blue", "yellow"] */
 function splitByComma(str) {
-    let wordsArr = str.split(",");
-    console.log(wordsArr);
+    return str.split(",");
 }
-splitByComma("apple,banana,grape");
-splitByComma("red,green,blue,yellow");
+
+console.log(splitByComma("apple,banana,grape"));
+console.log(splitByComma("red,green,blue,yellow"));
 console.log("----------------");
 
 /* 2. Create a function joinWithDash(arr) that takes an array arr as an argument. The function should join all the elements of the array into a single string with each element separated by a dash "-".
@@ -17,11 +17,11 @@ Example Output: "sun-moon-stars"
 Example Input: ["quick", "brown", "fox"]
 Example Output: "quick-brown-fox" */
 function joinWithDash(arr) {
-    let wordsStr = arr.join("-");
-    console.log(wordsStr);
+    return arr.join("-");
 }
-joinWithDash(["sun", "moon", "stars"]);
-joinWithDash(["quick", "brown", "fox"]);
+
+console.log(joinWithDash(["sun", "moon", "stars"]));
+console.log(joinWithDash(["quick", "brown", "fox"]));
 console.log("----------------");
 
 /* 3. Create a function splitSentenceIntoWords(sentence) that takes a sentence as an argument. The function should split the sentence into an array of words. Assume words in the sentence are separated by spaces.
@@ -30,11 +30,11 @@ Example Output: ["The", "quick", "brown", "fox"]
 Example Input: "Hello World from JavaScript"
 Example Output: ["Hello", "World", "from", "JavaScript"] */
 function splitSentenceIntoWords(sentence) {
-    let words = sentence.split(" ");
-    console.log(words);
+    return sentence.split(" ");
 }
-splitSentenceIntoWords("The quick brown fox");
-splitSentenceIntoWords("Hello World from JavaScript");
+
+console.log(splitSentenceIntoWords("The quick brown fox"));
+console.log(splitSentenceIntoWords("Hello World from JavaScript"));
 console.log("----------------");
 
 /* 4. Create a function createCamelCase(str) that takes a string str as an argument. The string contains words separated by spaces. The function should return a camelCase version of the string.
@@ -69,8 +69,7 @@ function splitAndReverse(str, separator) {
     let wordsArr = str.split(separator);
     let reversedArr = wordsArr.reverse();
 
-    let reversedStr = reversedArr.join(separator);
-    return reversedStr;
+    return reversedArr.join(separator);
 }
 
 console.log(splitAndReverse("one-two-three", "-"));
@@ -96,18 +95,13 @@ Example Input: ("apple-orange-banana", ["-", "a"])
 Example Output: ["", "pple", "or", "nge", "b", "n", "n", ""]
 Example Input: ("red,green,blue", [",", "e"])
 Example Output: ["r", "d", "gr", "", "n", "blu", ""] */
-function splitByMultipleCharacters(str, characters) {
-    let result = [str];
-    for (var i = 0; i < characters.length; i++) {
-        var newArr = [];
-        for (var j = 0; j < result.length; j++) {
-            var splitArr = result[j].split(characters[i]);
-            newArr = newArr.concat(splitArr);
-        }
 
-        result = newArr;
+function splitByMultipleCharacters(str, characters) {
+    for (var i = 0; i < characters.length; i++) {
+        var character = characters[i];
+        str = str.split(character).join("&");
     }
-    return result;
+    return str.split("&");
 }
 
 console.log(splitByMultipleCharacters("apple-orange-banana", ["-", "a"]));
@@ -134,9 +128,12 @@ Example Output: "Doe, John"
 Example Input: "Alice Wonderland"
 Example Output: "Wonderland, Alice" */
 function swapFirstAndLastName(fullName) {
-    let arr = fullName.split(" ");
-    let swappedName = arr.join(", ");
-    return swappedName;
+    let strParts = fullName.split(" ");
+    [strParts[0], strParts[1]] = [strParts[1], strParts[0]];
+
+    return strParts.join(",");
+
+    //return arr.reverse().join(",");
 }
 
 console.log(swapFirstAndLastName("John Doe"));
@@ -157,6 +154,17 @@ function createHashtag(str) {
         arrWithHash.push(capitalizedWord);
     }
     return arrWithHash.join("");
+}
+
+function createHashtag(str) {
+    let words = str.split(" ");
+
+    for (var i = 0; i < words.length; i++) {
+        var word = words[i];
+        words[i] = word[0].toUpperCase() + word.slice(1);
+    }
+
+    return "#" + words.join("");
 }
 
 console.log(createHashtag("hello world"));
