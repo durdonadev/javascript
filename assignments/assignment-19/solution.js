@@ -56,6 +56,19 @@ function createCamelCase(str) {
     return camelCase;
 }
 
+// Solution
+function createCamelCase(str) {
+    var words = str.split(" ");
+    words[0] = words[0].toLowerCase();
+
+    for (var i = 1; i < words.length; i++) {
+        var word = words[i];
+
+        words[i] = word[0].toUpperCase() + word.slice(1).toLowerCase();
+    }
+    return words.join("");
+}
+
 console.log(createCamelCase("Hello world"));
 console.log(createCamelCase("first name"));
 console.log("----------------");
@@ -66,10 +79,7 @@ Example Output: "three-two-one"
 Example Input: ("front middle back", " ")
 Example Output: "back middle front" */
 function splitAndReverse(str, separator) {
-    let wordsArr = str.split(separator);
-    let reversedArr = wordsArr.reverse();
-
-    return reversedArr.join(separator);
+    return str.split(separator).reverse().join(separator);
 }
 
 console.log(splitAndReverse("one-two-three", "-"));
@@ -82,8 +92,7 @@ Example Output: "Hello_world"
 Example Input: "OpenAI GPT-4 rocks"
 Example Output: "OpenAI_GPT-4_rocks" */
 function replaceSpacesWithUnderscore(str) {
-    let words = str.split(" ");
-    return words.join("_");
+    return str.split(" ").join("_");
 }
 
 console.log(replaceSpacesWithUnderscore("Hello my world"));
@@ -114,8 +123,7 @@ Example Output: 4
 Example Input: "Hello World from JavaScript"
 Example Output: 4 */
 function countWordsInSentence(sentence) {
-    let wordsArr = sentence.split(" ");
-    return wordsArr.length;
+    return sentence.split(" ").length;
 }
 
 console.log(countWordsInSentence("The quick brown fox"));
@@ -128,8 +136,12 @@ Example Output: "Doe, John"
 Example Input: "Alice Wonderland"
 Example Output: "Wonderland, Alice" */
 function swapFirstAndLastName(fullName) {
-    let strParts = fullName.split(" ");
-    [strParts[0], strParts[1]] = [strParts[1], strParts[0]];
+    let parts = fullName.split(" ");
+    // [parts[0], parts[1]] = [parts[1], parts[0]];
+
+    var temp = parts[0];
+    parts[0] = parts[1];
+    parts[1] = temp;
 
     return strParts.join(",");
 
@@ -156,12 +168,12 @@ function createHashtag(str) {
     return arrWithHash.join("");
 }
 
+// Solution
 function createHashtag(str) {
     let words = str.split(" ");
 
     for (var i = 0; i < words.length; i++) {
-        var word = words[i];
-        words[i] = word[0].toUpperCase() + word.slice(1);
+        words[i] = word[0].toUpperCase() + word[i].slice(1);
     }
 
     return "#" + words.join("");
