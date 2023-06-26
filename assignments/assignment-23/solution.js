@@ -1,5 +1,6 @@
 let movieCollection = {
     movies: [],
+    moviesTheSameGenre: [],
 
     // 1. Create addMovie method
     addMovie: function (title, director, genre, year) {
@@ -22,12 +23,13 @@ let movieCollection = {
     },
 
     // 3. Create getMoviesByGenre method
-    getMovieByGenre: function (genre) {
+    getMoviesByGenre: function (genre) {
         for (let i = 0; i < this.movies.length; i++) {
             if (this.movies[i].genre === genre) {
-                return this.movies[i];
+                this.moviesTheSameGenre.push(this.movies[i]);
             }
         }
+        return this.moviesTheSameGenre;
     },
 
     // 4. Create updateMovie method
@@ -78,18 +80,16 @@ movieCollection.addMovie(
     "Science Fiction",
     2010
 );
-movieCollection.addMovie(
-    "Avatar",
-    "James Cameron",
-    "Epic Science Fiction",
-    2009
-);
+movieCollection.addMovie("Avatar", "James Cameron", "Science Fiction", 2009);
+
+movieCollection.addMovie("The Big Short", "Adam McKay", "Drama", 2015);
+// console.log(movieCollection);
 
 // 2. getMovieByTitle method
 // console.log(movieCollection.getMovieByTitle("Avatar"));
 
 // 3. getMoviesByGenre method
-// console.log(movieCollection.getMovieByGenre("Drama"));
+// console.log(movieCollection.getMoviesByGenre("Drama"));
 
 // 4. updateMovie method
 // console.log(
