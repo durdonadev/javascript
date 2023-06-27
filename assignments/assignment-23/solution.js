@@ -39,21 +39,30 @@ let movieCollection = {
                 (this.movies[i].director = update.director),
                     (this.movies[i].genre = update.genre),
                     (this.movies[i].year = update.year);
-                return this.movies[i];
             }
         }
     },
 
     // 5. Create deleteMovie method
     deleteMovie: function (title) {
+        //let movieIdx = undefined;
         for (let i = 0; i < this.movies.length; i++) {
             if (this.movies[i].title === title) {
-                // delete this.movies[i];
+                //movieIdx = i;
+                //break;
 
                 this.movies.splice(i, 1);
+                //delete this.movies[i];
             }
         }
+
+        // this.movies = this.movies.slice(0, movieIdx).concat(this.movies.slice(movieIdx + 1));
     },
+
+    // arr = ["a", "b", "c", "d", ""e]; d => 3, arr.slice(0, 3) => [a, b, c] + arrslice(4) => [e]; [a, b, c, e]
+    // arr.indexOf("d")
+
+    // arr = [23,45,67] arr.splice(1, 2)
 
     // 6. Create printMovies method
     printMovies: function () {
@@ -92,13 +101,11 @@ movieCollection.addMovie("The Big Short", "Adam McKay", "Drama", 2015);
 // console.log(movieCollection.getMoviesByGenre("Drama"));
 
 // 4. updateMovie method
-// console.log(
-//     movieCollection.updateMovie("Avatar", {
-//         director: "John Doe",
-//         genre: "Action",
-//         year: 2022
-//     })
-// );
+movieCollection.updateMovie("Avatar", {
+    director: "John Doe",
+    genre: "Action",
+    year: 2022
+});
 
 // 5. deleteMovie method
 // movieCollection.deleteMovie("Inception");
