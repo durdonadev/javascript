@@ -129,7 +129,7 @@ function averageScore(scores) {
             sumOfScore += scoresArr[i];
         }
         const avarage = sumOfScore / scoresArr.length;
-        studentsAvarageScore[student] = avarage;
+        studentsAvarageScore[student] = avarage.toFixed(2);
     }
     return studentsAvarageScore;
 }
