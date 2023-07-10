@@ -18,7 +18,8 @@ function printUserProfile(userProfile) {
 
 function addStock(inventory, newInventory) {
     for (const fruit in newInventory) {
-        if (Object.keys(inventory).includes(fruit)) {
+        //if (inventory[fruit] !== undefined) {
+        if (inventory[fruit]) {
             inventory[fruit] += newInventory[fruit];
         } else {
             inventory[fruit] = newInventory[fruit];
@@ -28,25 +29,23 @@ function addStock(inventory, newInventory) {
 }
 
 // console.log(
-//     addStock(
-//         { apple: 5, banana: 3, orange: 2 },
-//         { banana: 2, orange: 3, peach: 5 }
-//     )
+//     addStock({ apple: 5, banana: 3, orange: 2 }, { grapes: 3, peach: 5 })
 // );
 // console.log(addStock({ apple: 10, orange: 5 }, { apple: 5, banana: 10 }));
 
 // 3. Filtering Properties:
 
 function filterData(object, key) {
-    let filteredData = {};
-    // filteredData[key] = object[key];
+    // let filteredData = {};
+    // // filteredData[key] = object[key];
 
-    for (const data in object) {
-        if (data === key) {
-            filteredData[data] = object[data];
-        }
-    }
-    return filteredData;
+    // for (const data in object) {
+    //     if (data === key) {
+    //         filteredData[data] = object[data];
+    //     }
+    // }
+    // return filteredData;
+    return { [key]: object[key] };
 }
 
 // console.log(
@@ -158,8 +157,8 @@ function findLargest(ages) {
     return oldestPerson;
 }
 
-// console.log(findLargest({ John: 30, Jane: 32, Bob: 28 }));
-// console.log(findLargest({ Adam: 35, Eve: 30, Abel: 33 }));
+console.log(findLargest({ John: 30, Jane: 32, Bob: 28 }));
+console.log(findLargest({ Adam: 35, Eve: 30, Abel: 33 }));
 
 // 8. Reversing Key-Value Pairs:
 
@@ -220,22 +219,32 @@ function countBooleans(array) {
 
 // 10. Calculating Total Price:
 
+// function calculateTotal(prices, items) {
+//     let total = 0;
+
+//     for (let i = 0; i < items.length; i++) {
+//         let item = items[i];
+
+//         if (Object.keys(prices).includes(item)) {
+//             total += prices[item];
+//         }
+//     }
+//     return total;
+// }
+
 function calculateTotal(prices, items) {
     let total = 0;
 
     for (let i = 0; i < items.length; i++) {
         let item = items[i];
-
-        if (Object.keys(prices).includes(item)) {
-            total += prices[item];
-        }
+        total += prices[item];
     }
     return total;
 }
 
-// console.log(
-//     calculateTotal({ apple: 1, banana: 0.5, orange: 0.75 }, ["apple", "banana"])
-// );
+console.log(
+    calculateTotal({ apple: 1, banana: 0.5, orange: 0.75 }, ["apple", "banana"])
+);
 // console.log(
 //     calculateTotal({ apple: 1, banana: 0.5, orange: 0.75 }, [
 //         "orange",
