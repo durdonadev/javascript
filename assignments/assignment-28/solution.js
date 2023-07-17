@@ -50,7 +50,8 @@ const books = [
             { id: 7, score: 4.8 },
             { id: 2, score: 4.7 },
             { id: 8, score: 5 },
-            { id: 12, score: 4.5 }
+            { id: 12, score: 4.5 },
+            { id: 10, score: 4 }
         ]
     }
 ];
